@@ -1,0 +1,27 @@
+{
+  "name": "pure-mongo",
+  "version": "1.0.0",
+  "description": "Demo using express with mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awhit012/pure-mongo.git"
+  },
+  "keywords": [
+    "express",
+    "mongodb"
+  ],
+  "author": "Alex White <awhit012@gmail.com> (http://www.awhit012.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awhit012/pure-mongo/issues"
+  },
+  "homepage": "https://github.com/awhit012/pure-mongo#readme",
+  "dependencies": {
+    "express": "4.13.3",
+    "mongodb": "2.0.45"
+  }
+}
