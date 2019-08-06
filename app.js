@@ -1,27 +1,28 @@
-var MongoClient = require('mongodb').MongoClient
-  , assert = require('assert');
+const MongoClient = require('mongodb').MongoClient
+const assert = require('assert');
 
 // Connection URL
-var url = 'mongodb://localhost:27017/myproject';
+const url = 'mongodb://localhost:27017/foo';
 
 // Use connect method to connect to the Server
-MongoClient.connect(url, function(err, db) {
+MongoClient.connect(url, (err, db) => {
+  // "assert" there is no error
   assert.equal(null, err);
   console.log("Connected correctly to server");
-  insertDocuments(db, function() {
-  	findDocuments(db, function() {
+  insertDocuments(db, () => {
+  	findDocuments(db, () => {
       db.close();
     });
   });	
 });
 
-var insertDocuments = function(db, callback) {
+const insertDocuments = (db, callback) => {
   // Get the documents collection 
-  var collection = db.collection('documents');
+  let collection = db.collection('documents');
   // Insert some documents 
   collection.insert([
     {a : 1}, {a : 2}, {a : 3}
-  ], function(err, result) {
+  ], (err, result) => {
     assert.equal(err, null);
     assert.equal(3, result.result.n);
     assert.equal(3, result.ops.length);
@@ -30,12 +31,12 @@ var insertDocuments = function(db, callback) {
   });
 }
 
-var findDocuments = function(db, callback) {
+var findDocuments = (db, callback) => {
   // Get the documents collection 
-  var collection = db.collection('documents');
+  let collection = db.collection('documents');
   // Find some documents 
-  collection.find({}).toArray(function(err, docs) {
-    assert.equal(err, null);f
+  collection.find({}).toArray((err, docs) => {
+    assert.equal(err, null);
     console.log("Found the following records");
     console.dir(docs);
     callback(docs);
