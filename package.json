@@ -22,6 +22,6 @@
   "homepage": "https://github.com/awhit012/pure-mongo#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongodb": "2.0.45"
+    "mongodb": "3.1.13"
   }
 }
